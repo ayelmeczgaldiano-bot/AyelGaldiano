@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <a href="../index/INDEX.html"></a>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#001329',      /* Deep Midnight Blue */
+                            navy: '#002244',      /* Rich Navy */
+                            classic: '#000080',   /* Classic Navy Blue */
+                            primary: '#003366',   /* True Blue */
+                            secondary: '#0066cc', /* Royal Blue */
+                            sky: '#e6f2ff',       /* Light Sky Tint */
+                            accent: '#38bdf8'     /* Sky Blue Accent */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght=0,400;0,600;0,700;1,400;1,600;1,700&family=Dancing+Script:wght=500;600;700&display=swap');
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+        }
+        .serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+        .cursive-accent {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        /* Premium Light Parallax Background - Highlights the historical image with clear visibility */
+        .hero-bg {
+            position: relative;
+            background-image: 
+                url('sisterswithfr.al.png');
+            background-size: cover;
+            background-position: center 30%;
+            background-attachment: fixed;
+        }
+
+        /* Timeline active styles - Aesthetic Light & Royal Blue accents */
+        .timeline-node.active .node-circle {
+            background-color: #2563eb;
+            box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.25);
+            transform: scale(1.35);
+        }
+        .timeline-node.active .node-year {
+            color: #1e40af;
+            font-weight: 800;
+        }
+
+        /* Custom scrollbar for horizontal timeline */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Custom Hover Zooming effects for the Photo Stack */
+        .collage-img {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .collage-card:hover .collage-img {
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 leading-relaxed overflow-x-hidden">
+    
+    <!-- Header / Nav -->
+     <nav class="fixed top-0 w-full z-[100] bg-white/95 backdrop-blur-md border-b border-blue-100 text-blue-900 transition-all duration-300" id="mainNav">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                
+                <!-- BRAND LOGO -->
+                <a href="../index/INDEX.html" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 bg-white rounded-full p-1 flex items-center justify-center border-2 border-blue-500 group-hover:scale-105 transition-transform">
+                        <img src="logo.webp" alt="Sisters of Mary Logo" class="w-full h-full rounded-full object-cover" onerror="this.src='https://placehold.co/100x100/003366/ffffff?text=SOM'">
+                    </div>
+                    <div>
+                        <h1 class="text-base sm:text-lg font-bold leading-tight tracking-tight text-blue-950 group-hover:text-blue-600 transition-colors"> Sisters of Mary</h1>
+                        <p class="text-[9px] uppercase tracking-widest font-semibold text-blue-600 opacity-90">Of Banneux, Inc.</p>
+                    </div>
+                </a>
+                <div class="flex items-center gap-4">
+                    <a href="../index/INDEX.html" class="flex items-center gap-2 px-5 py-2.5 text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-xl transition duration-200 shadow-lg shadow-blue-500/20">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Back to Home</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Beautiful Centered-Layout Hero Section (Bright, Airy & Clean) -->
+    <section class="hero-bg pt-36 pb-32 px-4 sm:px-6 lg:px-8 border-b border-blue-100 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.22),transparent_50%)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(219,234,254,0.5),transparent_80%)]"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <!-- Centered Header Block -->
+            <div class="max-w-4xl mx-auto text-center space-y-6">
+                <!-- Cursive Accent Pre-heading -->
+                <div class="space-y-1">
+                    <span class="cursive-accent text-3xl sm:text-5xl text-blue-600 font-semibold block drop-shadow-sm">
+                        A Journey of Faith and Love
+                    </span>
+                    <div class="flex justify-center items-center gap-3">
+                        <span class="h-[1px] w-12 bg-blue-300"></span>
+                        <span class="text-xs font-bold tracking-widest text-blue-800 uppercase">Since 1964</span>
+                        <span class="h-[1px] w-12 bg-blue-300"></span>
+                    </div>
+                </div>
+
+                <!-- Main Artistic Header -->
+                <h1 class="serif-title text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-blue-950 leading-[1.15] drop-shadow-sm">
+                    Our school is a testament to a legacy of <span class="italic text-blue-700 relative inline-block font-bold">educational excellence<span class="absolute bottom-1 left-0 right-0 h-1 bg-blue-200 rounded-full"></span></span> & compassionate service.
+                </h1>
+
+                <!-- Decorative Flourish -->
+                <div class="flex justify-center items-center gap-2 text-blue-500 py-1">
+                    <i class="fa-solid fa-leaf text-xs rotate-45"></i>
+                    <div class="h-[1px] w-20 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+                    <i class="fa-solid fa-circle-dot text-xs"></i>
+                    <div class="h-[1px] w-20 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+                    <i class="fa-solid fa-leaf text-xs -rotate-45"></i>
+                </div>
+                
+                <!-- Highly Translucent Floating Light Glass Block (Centered) -->
+                <div class="max-w-3xl mx-auto bg-blue-200/80 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-white/80 shadow-xl shadow-blue-900/5 relative group hover:bg-white/90 transition-all duration-300">
+                    <!-- Blue Corner Accents -->
+                    <div class="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-blue-400/50 rounded-tl-lg"></div>
+                    <div class="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-blue-400/50 rounded-br-lg"></div>
+                    
+                    <p class="text-slate-700 text-base sm:text-lg leading-relaxed font-normal text-center">
+                        Established with a profound commitment to nurturing the minds and hearts of young learners, our institution stands as a symbol of hope and empowerment in the realm of education. With a rich history spanning over <span class="font-bold text-blue-800">six decades</span>, we have remained steadfast in our mission to provide high-quality education that not only equips students with academic knowledge and technical skills but also instills in them core Christian values.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Redesigned High-Impact Multi-Image Gallery Row (Significantly Bigger Pictures) -->
+            <div class="max-w-6xl mx-auto mt-16">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch px-4">
+                    
+                    <!-- Card 1: Historical Mission (Left card, now much larger and clearer) -->
+                    <div class="bg-white border border-blue-100 p-4 rounded-3xl shadow-xl md:rotate-[-1.5deg] hover:rotate-0 hover:-translate-y-2 hover:z-30 transition-all duration-300 hover:shadow-2xl flex flex-col group collage-card">
+                        <div class="w-full h-64 sm:h-72 rounded-2xl overflow-hidden bg-slate-50 shadow-inner">
+                            <img src="sisters.png" alt="Historical Mission" class="w-full h-full object-cover collage-img" onerror="this.src='https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=600'">
+                        </div>
+                        <div class="mt-4 text-center">
+                            <p class="text-xs uppercase font-bold text-blue-800 tracking-widest">People behind the Mission</p>
+                            <div class="h-[1px] w-12 bg-blue-100 mx-auto mt-2"></div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: The Foundation Day (Center elevated card, now much larger and clearer) -->
+                    <div class="bg-white border border-blue-200 p-4 rounded-3xl shadow-2xl md:-translate-y-4 hover:-translate-y-6 hover:z-30 transition-all duration-300 hover:shadow-2xl flex flex-col group collage-card">
+                        <div class="w-full h-68 sm:h-80 rounded-2xl overflow-hidden bg-slate-50 shadow-inner">
+                            <img src="graduation.png" alt="Foundation Day" class="w-full h-full object-cover collage-img" onerror="this.src='https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=600'">
+                        </div>
+                        <div class="mt-4 text-center">
+                            <p class="text-xs uppercase font-bold text-blue-800 tracking-widest">Beneficiaries</p>
+                            <div class="h-[1px] w-12 bg-blue-100 mx-auto mt-2"></div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Ven. Aloysius Schwartz (Right card, now much larger and clearer) -->
+                    <div class="bg-white border border-blue-100 p-4 rounded-3xl shadow-xl md:rotate-[1.5deg] hover:rotate-0 hover:-translate-y-2 hover:z-30 transition-all duration-300 hover:shadow-2xl flex flex-col group collage-card">
+                        <div class="w-full h-64 sm:h-72 rounded-2xl overflow-hidden bg-slate-50 shadow-inner">
+                            <img src="visiting day.webp" alt="Father Al Portrait" class="w-full h-full object-cover collage-img" onerror="this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=600'">
+                        </div>
+                        <div class="mt-4 text-center">
+                            <p class="text-xs uppercase font-bold text-blue-600 tracking-widest">Impacts on the Life of the Students</p>
+                            <div class="h-[1px] w-12 bg-blue-100 mx-auto mt-2"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Centered CTA Scroll Indicator -->
+            <div class="text-center pt-12">
+                <a href="#interactive-history-timeline" class="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-bold px-10 py-4 rounded-full shadow-lg shadow-blue-500/20 transform hover:-translate-y-0.5 transition duration-200">
+                    <span class="tracking-wide text-sm"> Explore Our Journey </span>
+                    <i class="fa-solid fa-circle-arrow-down text-blue-200 text-base animate-bounce mt-0.5"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Elegant wave page transition divider -->
+        <div class="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none line-height-0">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-8 text-blue-50 fill-current">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE TIMELINE SECTION (Pleasing Bright Blue/White Theme) -->
+    <section id="interactive-history-timeline" class="py-24 px-4 sm:px-6 lg:px-8 bg-blue-200/55 text-slate-800 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.06),transparent_40%)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.05),transparent_40%)]"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <span class="cursive-accent text-3xl text-blue-600 block mb-1">History</span>
+                <h2 class="serif-title text-4xl md:text-5xl font-bold mt-2 text-blue-950">Milestones of Grace</h2>
+                <div class="h-1.5 w-16 bg-blue-500 mx-auto mt-4 rounded-full"></div>
+                <p class="text-slate-600 mt-5 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+                    The curricular program at the Sisters of Mary Schools in the Philippines is closely aligned with the Junior and Senior High School curricula of the K to 12 Basic Education Program, with a particular emphasis on technical vocational courses.
+                </p>
+
+                <!-- Filter Controls -->
+                <div class="inline-flex p-1.5 bg-white/90 backdrop-blur border border-blue-400 rounded-2xl mt-8 shadow-sm">
+                    <button onclick="switchTimelineTab('founder')" id="tab-founder" class="px-5 py-2.5 rounded-xl text-sm font-semibold transition duration-200 text-slate-500 hover:text-blue-700">
+                        School History
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Interactive Display -->
+            <div class="bg-blue-300 border border-white rounded-3xl p-6 md:p-12 shadow-xl shadow-blue-900/5 relative">
+                <!-- Timeline Navigation Bar -->
+                <div class="relative mb-12">
+                    <!-- Progress Line background -->
+                    <div class="absolute top-1/2 left-0 right-0 h-1 bg-blue-100 transform -translate-y-1/2 rounded-full"></div>
+                    <!-- Filled active progress line -->
+                    <div id="timeline-progress" class="absolute top-1/2 left-0 h-1 bg-gradient-to-r from-blue-600 to-blue-400 transform -translate-y-1/2 rounded-full transition-all duration-500" style="width: 0%"></div>
+                    
+                    <!-- Touch/Scroll Navigation Track -->
+                    <div id="timeline-node-container" class="relative flex justify-between items-center overflow-x-auto hide-scrollbar gap-8 md:gap-4 py-4 px-2">
+                        <!-- Interactive node elements dynamically generated by JS -->
+                    </div>
+                </div>
+
+                <!-- Active Event Content Box -->
+                <div id="timeline-content-card" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-blue-200 p-6 md:p-8 rounded-2xl border border-blue-100 min-h-[380px] transition-all duration-300 transform">
+                    <!-- Left: Content Details (7 Cols) -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="flex items-center gap-3">
+                            <span id="active-event-badge" class="px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase text-blue-700 bg-blue-50 border border-blue-200">
+                                Milestone
+                            </span>
+                            <span id="active-event-year" class="text-sm font-bold text-blue-600">
+                                1964
+                            </span>
+                        </div>
+                        <h3 id="active-event-title" class="serif-title text-2xl md:text-4xl font-bold text-blue-950 tracking-tight leading-tight">
+                            Title of Event
+                        </h3>
+                        <p id="active-event-description" class="text-slate-600 text-base md:text-lg leading-relaxed">
+                            Event description goes here.
+                        </p>
+                    </div>
+
+                    <!-- Right: Illustrated Image -->
+                    <div class="lg:col-span-5 h-64 md:h-80 w-full rounded-2xl overflow-hidden relative shadow-md group bg-slate-50 border border-blue-100">
+                        <img id="active-event-image" src="" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <!-- Custom Icon Overlay based on event -->
+                        <div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur p-3.5 rounded-xl border border-blue-100 shadow-sm">
+                            <i id="active-event-icon" class="fa-solid fa-calendar-days text-xl text-blue-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Stepper Arrows & Slideshow Controls -->
+                <div class="flex justify-between items-center mt-10">
+                    <button onclick="prevTimelineEvent()" class="flex items-center gap-2 px-5 py-3 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 transition font-semibold text-sm border border-blue-100">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Previous</span>
+                    </button>
+                    
+                    <!-- Autoplay toggle -->
+                    <button id="autoplay-btn" onclick="toggleAutoplay()" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-blue-100 text-blue-600 hover:bg-blue-50 transition text-xs font-semibold uppercase tracking-wider shadow-sm">
+                        <i class="fa-solid fa-play text-xs"></i>
+                        <span id="autoplay-text">Autoplay</span>
+                    </button>
+
+                    <button onclick="nextTimelineEvent()" class="flex items-center gap-2 px-5 py-3 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 transition font-semibold text-sm border border-blue-100">
+                        <span>Next</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy / Global Influence Stats Section -->
+    <section class="bg-blue-200 py-20 px-4 sm:px-6 lg:px-8 border-y border-blue-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="space-y-2 p-4">
+                    <div class="inline-flex p-3 bg-blue-50 text-blue-600 rounded-xl mb-2">
+                        <i class="fa-solid fa-earth-americas text-2xl"></i>
+                    </div>
+                    <h4 class="text-4xl font-extrabold text-blue-950 tracking-tight font-serif">6+</h4>
+                    <p class="text-slate-500 font-semibold text-sm uppercase tracking-wider">Countries</p>
+                </div>
+                <div class="space-y-2 p-4">
+                    <div class="inline-flex p-3 bg-blue-50 text-blue-600 rounded-xl mb-2">
+                        <i class="fa-solid fa-person-shelter text-2xl"></i>
+                    </div>
+                    <h4 class="text-4xl font-extrabold text-blue-950 tracking-tight font-serif">20k+</h4>
+                    <p class="text-slate-500 font-semibold text-sm uppercase tracking-wider">Students</p>
+                </div>
+                <div class="space-y-2 p-4">
+                    <div class="inline-flex p-3 bg-blue-50 text-blue-600 rounded-xl mb-2">
+                        <i class="fa-solid fa-user-graduate text-2xl"></i>
+                    </div>
+                    <h4 class="text-4xl font-extrabold text-blue-950 tracking-tight font-serif">160K+</h4>
+                    <p class="text-slate-500 font-semibold text-sm uppercase tracking-wider">Graduates</p>
+                </div>
+                <div class="space-y-2 p-4">
+                    <div class="inline-flex p-3 bg-blue-50 text-blue-600 rounded-xl mb-2">
+                        <i class="fa-solid fa-hands-holding-child text-2xl"></i>
+                    </div>
+                    <h4 class="text-4xl font-extrabold text-blue-950 tracking-tight font-serif">5</h4>
+                    <p class="text-slate-500 font-semibold text-sm uppercase tracking-wider">Year Program</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER 
+         ========================================== -->
+    <footer class="bg-brand-dark py-16 text-white overflow-hidden relative border-t border-brand-primary">
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">Sisters of Mary</h3>
+                    <p class="text-blue-200 max-w-md mb-6 leading-relaxed text-sm">Dedicated to serving the poorest of the poor by providing quality education and a loving home to children in need across the globe.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-brand-accent uppercase tracking-widest text-xs">Contact Info</h4>
+                    <ul class="space-y-4 text-blue-100 text-sm">
+                        <li class="flex gap-3"><i class="fa-solid fa-location-dot mt-1 text-brand-accent"></i> Biga II, Silang, Cavite, Philippines</li>
+                        <li class="flex gap-3"><i class="fa-solid fa-envelope mt-1 text-brand-accent"></i> info@facfi.org.ph</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-10 border-t border-white/10 text-center">
+                <p class="text-blue-300 text-[10px] md:text-xs font-medium uppercase tracking-[0.2em]">&copy; 2026  Sisters Of Mary Of Banneux, Inc.. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE TIMELINE LOGIC SCRIPT -->
+    <script>
+        // Database of historical milestones strictly following your structure: year, title, description, image, imageFallback
+        const timelineEvents = [
+            
+            {
+                year: 1964,
+                title: "FOUNDATION IN SOUTH KOREA",
+                description: "The Sisters of Mary congregation was founded by Venerable Aloysius Schwartz in Busan, South Korea, on August 15, 1964, to care for orphans, war refugees, and abandoned children.",
+                image: "korea.png",
+                imageFallback: "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&q=80&w=600"
+            },
+            {
+                year: 1985,
+                title: "EXPANSION TO THE PHILIPPINES",
+                description: "Following its success in Korea, the Sisters of Mary expanded to the Philippines in 1985, establishing the Boystown and Girlstown schools.",
+                image: "philippines.png",
+                imageFallback: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=600"
+            },
+            {
+                year: 1990,
+                title: "MEXICO",
+                description: "Despite suffering from ALS in 1990, Fr. Al accepted the invitation of Bishop Jose Maria Hernandez Gonzalez to establish Boystown and Girlstown in Mexico.",
+                image: "mexico.png",
+                imageFallback: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=600"
+            },
+            {
+                year: 1996,
+                title: "GUATEMALA",
+                description: "The Sisters welcomed the first group of students to the newly opened Boystown and Girlstown Complex in Zone 13, in 1998.",
+                image: "guatemala.png",
+                imageFallback: "https://images.unsplash.com/photo-1551076805-e186902b1581?auto=format&fit=crop&q=80&w=600"
+            },
+            {
+                year: 2000,
+                title: "BRAZIL",
+                description: "The construction of Medical and Dental Clinic was completed in 2002, serving the poorest of the poor sick people in the vicinity.",
+                image: "brazil.png",
+                imageFallback: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=600"
+            },
+            {
+                year: 2011,
+                title: "HONDURAS",
+                description: "A four-storey workshop was started and was inaugurated in 2012 with the first 80 girls accepted.",
+                image: "honduras.png",
+                imageFallback: "https://images.unsplash.com/photo-1548623917-2fbf0f119001?auto=format&fit=crop&q=80&w=600"
+            },
+            {
+                year: 2018,
+                title: "TANZANIA",
+                description: "Construction was started immediately and the first 153 girls were accepted in May, 2019.",
+                image: "tanzania.png",
+                imageFallback: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=600"
+            }
+        ];
+
+        let currentFilter = "all";
+        let activeEventIndex = 0;
+        let autoplayInterval = null;
+        let isAutoplayOn = false;
+
+        // Initialize Timeline
+        function initTimeline() {
+            renderTimelineNodes();
+            showActiveEvent();
+        }
+
+        // Filter and compile matches
+        function getFilteredEvents() {
+            if (currentFilter === "all") {
+                return timelineEvents; // show all
+            }
+            return timelineEvents.filter(ev => ev.category === currentFilter || ev.category === "all");
+        }
+
+        // Render nodes/dots
+        function renderTimelineNodes() {
+            const container = document.getElementById("timeline-node-container");
+            const filtered = getFilteredEvents();
+            container.innerHTML = "";
+
+            filtered.forEach((event, idx) => {
+                const node = document.createElement("button");
+                node.className = `timeline-node shrink-0 flex flex-col items-center group focus:outline-none transition-all duration-300 relative z-10 ${idx === activeEventIndex ? 'active' : ''}`;
+                node.onclick = () => selectEvent(idx);
+
+                node.innerHTML = `
+                    <span class="node-year text-xs md:text-sm font-semibold text-slate-500 group-hover:text-blue-600 transition duration-200">${event.year}</span>
+                    <div class="node-circle w-4 h-4 bg-white border-2 border-blue-200 rounded-full mt-2 transition duration-200 group-hover:bg-blue-500"></div>
+                `;
+                container.appendChild(node);
+            });
+
+            updateProgressBar();
+        }
+
+        // Highlight line progress
+        function updateProgressBar() {
+            const progress = document.getElementById("timeline-progress");
+            const filtered = getFilteredEvents();
+            if (filtered.length <= 1) {
+                progress.style.width = "0%";
+                return;
+            }
+            const percentage = (activeEventIndex / (filtered.length - 1)) * 100;
+            progress.style.width = `${percentage}%`;
+        }
+
+        // Show detailed card details
+        function showActiveEvent() {
+            const filtered = getFilteredEvents();
+            const current = filtered[activeEventIndex];
+
+            if (!current) return;
+
+            // Highlight the correct dot element
+            const nodes = document.querySelectorAll(".timeline-node");
+            nodes.forEach((node, idx) => {
+                if (idx === activeEventIndex) {
+                    node.classList.add("active");
+                    // Scroll active node into view if it overflows container
+                    node.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                } else {
+                    node.classList.remove("active");
+                }
+            });
+
+            // Populate Card Information with transition animations
+            const contentCard = document.getElementById("timeline-content-card");
+            contentCard.style.opacity = "0";
+            contentCard.style.transform = "translateY(5px)";
+
+            setTimeout(() => {
+                document.getElementById("active-event-badge").innerText = current.category === "founder" ? "Founder's Legacy" : "School Milestone";
+                document.getElementById("active-event-year").innerText = current.year;
+                document.getElementById("active-event-title").innerText = current.title;
+                document.getElementById("active-event-description").innerText = current.description;
+                
+                // Image setting with fallback system handling
+                const img = document.getElementById("active-event-image");
+                img.src = current.image;
+                img.onerror = function() {
+                    this.onerror = null;
+                    this.src = current.imageFallback;
+                };
+
+                contentCard.style.opacity = "1";
+                contentCard.style.transform = "translateY(0)";
+            }, 200);
+
+            updateProgressBar();
+        }
+
+        // Tab selection
+        function switchTimelineTab(tabName) {
+            currentFilter = tabName;
+            activeEventIndex = 0; // reset to beginning of filtered timeline
+
+            // update tab buttons active state
+            const tabs = ["all", "founder", "school"];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`tab-${t}`);
+                if (t === tabName) {
+                    btn.className = "px-5 py-2.5 rounded-xl text-sm font-semibold transition duration-200 bg-blue-600 text-white shadow-md";
+                } else {
+                    btn.className = "px-5 py-2.5 rounded-xl text-sm font-semibold transition duration-200 text-slate-500 hover:text-blue-600 hover:bg-white border border-transparent hover:border-blue-100 shadow-sm";
+                }
+            });
+
+            renderTimelineNodes();
+            showActiveEvent();
+        }
+
+        // Stepper Navigation
+        function selectEvent(idx) {
+            activeEventIndex = idx;
+            showActiveEvent();
+            if (isAutoplayOn) {
+                resetAutoplayTimer();
+            }
+        }
+
+        function prevTimelineEvent() {
+            const filtered = getFilteredEvents();
+            if (activeEventIndex > 0) {
+                activeEventIndex--;
+            } else {
+                activeEventIndex = filtered.length - 1; // loop back
+            }
+            showActiveEvent();
+            if (isAutoplayOn) resetAutoplayTimer();
+        }
+
+        function nextTimelineEvent() {
+            const filtered = getFilteredEvents();
+            if (activeEventIndex < filtered.length - 1) {
+                activeEventIndex++;
+            } else {
+                activeEventIndex = 0; // loop back
+            }
+            showActiveEvent();
+        }
+
+        // Autoplay logic
+        function toggleAutoplay() {
+            const btn = document.getElementById("autoplay-btn");
+            
+            if (isAutoplayOn) {
+                clearInterval(autoplayInterval);
+                isAutoplayOn = false;
+                btn.className = "flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-blue-100 text-blue-600 hover:bg-blue-50 transition text-xs font-semibold uppercase tracking-wider shadow-sm";
+                btn.innerHTML = `<i class="fa-solid fa-play text-xs text-blue-500"></i><span id="autoplay-text">Autoplay</span>`;
+            } else {
+                isAutoplayOn = true;
+                btn.className = "flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-50 border border-blue-200 text-blue-700 transition text-xs font-semibold uppercase tracking-wider shadow-sm";
+                btn.innerHTML = `<i class="fa-solid fa-pause text-xs text-blue-500 animate-pulse"></i><span id="autoplay-text">Playing</span>`;
+                autoplayInterval = setInterval(nextTimelineEvent, 4000); // changes slides every 4s
+            }
+        }
+
+        function resetAutoplayTimer() {
+            clearInterval(autoplayInterval);
+            autoplayInterval = setInterval(nextTimelineEvent, 4000);
+        }
+
+        // Start everything up
+        window.onload = function() {
+            initTimeline();
+        };
+    </script>
+</body>
+</html>
